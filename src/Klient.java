@@ -39,7 +39,7 @@ public class Klient {
         if(prijmeni == null || !prijmeni.matches("[A-Z][a-z]+")){
             throw new IllegalArgumentException("Neplatné příjmení.");
         }else{
-            this.jmeno = jmeno;
+            this.prijmeni = prijmeni;
         }
     }
 
@@ -60,7 +60,7 @@ public class Klient {
     }
 
     public void setIco(String ico) {
-        if(ico == null || !ico.matches("\\d{8}")){
+        if(ico == null || !ico.matches("[0-9]{8}")){
             throw new IllegalArgumentException("Neplatné IČO.");
         }else{
             this.ico = ico;
@@ -72,10 +72,10 @@ public class Klient {
     }
 
     public void setTelefonniCislo(String telefonniCislo) {
-        if(telefonniCislo == null || !telefonniCislo.matches("\\d{9}")){
+        if(telefonniCislo == null || !telefonniCislo.matches("[0-9]{9}")){
             throw new IllegalArgumentException("Neplatné telefonní číslo.");
         }else{
-            this.ico = ico;
+            this.telefonniCislo = telefonniCislo;
         }
     }
 
