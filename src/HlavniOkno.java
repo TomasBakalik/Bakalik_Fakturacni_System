@@ -53,6 +53,8 @@ public class HlavniOkno extends JFrame {
 
         panel.add(panelStred, BorderLayout.CENTER);
 
+        tlacitkoVystavit.addActionListener(e -> otevrtiFormular());
+
     }
 
     public JButton vytvorTlacitko(String text, Color barvaPozadi){
@@ -63,5 +65,10 @@ public class HlavniOkno extends JFrame {
         tlacitko.setBackground(barvaPozadi);
         tlacitko.setFocusPainted(false);
         return tlacitko;
+    }
+
+    public void otevrtiFormular(){
+        FormularFaktura formular = new FormularFaktura();
+        formular.setVisible(true);
     }
 }
