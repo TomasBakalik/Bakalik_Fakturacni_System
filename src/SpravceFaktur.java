@@ -20,5 +20,8 @@ public class SpravceFaktur {
         return new ArrayList<>(faktury);
     }
 
+    public int pocetFaktur(){
+        return faktury.size();
+    }
 
 }
