@@ -15,4 +15,10 @@ public class SpravceFaktur {
             faktury.add(faktura);
         }
     }
+
+    public ArrayList<Faktura> ziskejVsechnyFaktury() {
+        return new ArrayList<>(faktury);
+    }
+
+
 }
