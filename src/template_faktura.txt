@@ -1,0 +1,44 @@
+FAKTURA
+Datum vystavení: ${datumVystaveni}
+Datum splatnosti: ${datumSplatnosti}
+Číslo faktury: ${cisloFaktury}
+Stav faktury: ${stav}
+
+Klient:
+Jméno: ${jmeno}
+Příjmení: ${prijmeni}
+Adresa: ${adresa}
+ICO: ${ico}
+Telefon: ${telefon}
+Email: ${email}
+
+Položka:
+Název položky: ${nazevPolozky}
+Počet kusů: ${pocetKusu}
+Cena za kus: ${cenaZaKus}
+Cena celkem: ${cenaCelkova}
+
+Celková částka k úhradě: ${celkovaCena} Kč
+
+FAKTURA – DAŇOVÝ DOKLAD
+
+Vystavitel:
+Jméno: [Jmeno vystavitele]
+IČ: [IČ vystavitele]
+Adresa: [Adresa vystavitele]
+Telefon: [Telefon]
+Email: [Email]
+
+Odběratel:
+Jméno: [Jmeno klienta]
+IČ: [IČ klienta]
+Adresa: [Adresa klienta]
+
+Faktura č.: [Cislo faktury]
+Datum vystavení: [Datum vystaveni]
+Datum splatnosti: [Datum splatnosti]
+
+Popis: [Popis sluzby nebo zbozi]
+Cena celkem: [Cena] Kč
+
+Nejsme plátci DPH.
