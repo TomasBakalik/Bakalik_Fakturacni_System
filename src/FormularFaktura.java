@@ -18,6 +18,7 @@ public class FormularFaktura extends JFrame{
     private JTextField poleVystavitelAdresa;
     private JTextField poleVystavitelTelefon;
     private JTextField poleVystavitelEmail;
+    private JButton tlacitkoStahnout;
 
     public FormularFaktura(){
         nastavOkno();
@@ -93,7 +94,18 @@ public class FormularFaktura extends JFrame{
         poleCenaZaKus = new JTextField();
         panel.add(poleCenaZaKus);
 
+        tlacitkoStahnout = new JButton("Stáhnout fakturu");
+        tlacitkoStahnout.setPreferredSize(new Dimension(100, 50));
+        tlacitkoStahnout.setBackground(new Color(51, 102, 153));
+        tlacitkoStahnout.setForeground(Color.WHITE);
+        tlacitkoStahnout.setFont(new Font("Arial", Font.BOLD, 16));
+        tlacitkoStahnout.setFocusPainted(false);
+        tlacitkoStahnout.setPreferredSize(new Dimension(getWidth(), 50));
+
+
         setLayout(new BorderLayout());
         add(panel, BorderLayout.CENTER);
+        add(tlacitkoStahnout, BorderLayout.SOUTH);
+
     }
 }
