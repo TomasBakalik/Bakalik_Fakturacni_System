@@ -30,7 +30,7 @@ public class Uzivatel {
         }
     }
 
-    public String getPrijemni() {
+    public String getPrijmeni() {
         return prijmeni;
     }
 
@@ -38,7 +38,7 @@ public class Uzivatel {
         if(prijmeni == null || !prijmeni.matches("[A-Z][a-z]+")){
             throw new IllegalArgumentException("Neplatné příjmení.");
         }else{
-            this.jmeno = jmeno;
+            this.prijmeni = prijmeni;
         }
     }
 

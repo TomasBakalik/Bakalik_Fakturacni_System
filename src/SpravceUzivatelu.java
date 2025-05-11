@@ -11,7 +11,7 @@ public class SpravceUzivatelu {
             BufferedWriter writer = new BufferedWriter(new FileWriter(nazevSouboru, true));
             writer.write(
                     uzivatel.getJmeno() + "|" +
-                            uzivatel.getPrijemni() + "|" +
+                            uzivatel.getPrijmeni() + "|" +
                             uzivatel.getEmail() + "|" +
                             uzivatel.getHeslo() + "|" +
                             uzivatel.getTelefon() + "|" +
