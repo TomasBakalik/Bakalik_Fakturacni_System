@@ -15,7 +15,7 @@ public class UlozFaktury {
                             faktura.getStavFaktury().name() + "|" +
                             faktura.spocitejCelkovaCena() + "|" +
                             k.getJmeno() + "|" +
-                            k.getPrijemni() + "|" +
+                            k.getPrijmeni() + "|" +
                             k.getAdresa() + "|" +
                             k.getIco() + "|" +
                             k.getTelefonniCislo() + "|" +

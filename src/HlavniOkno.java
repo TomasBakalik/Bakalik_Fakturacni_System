@@ -54,6 +54,7 @@ public class HlavniOkno extends JFrame {
         panel.add(panelStred, BorderLayout.CENTER);
 
         tlacitkoVystavit.addActionListener(e -> otevrtiFormular());
+        tlacitkoRegistrovat.addActionListener(e -> new RegistraceOkno().setVisible(true));
 
     }
 

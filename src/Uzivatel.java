@@ -23,10 +23,10 @@ public class Uzivatel {
     }
 
     public void setJmeno(String jmeno) {
-        if(jmeno == null || !jmeno.matches("[A-Z][a-z]+")){
-            throw new IllegalArgumentException("Neplatné jméno.");
-        }else{
+        if (jmeno.matches("[A-Z][a-z]{1,20}")) {
             this.jmeno = jmeno;
+        } else {
+            throw new IllegalArgumentException("Neplatné jméno");
         }
     }
 
@@ -35,10 +35,10 @@ public class Uzivatel {
     }
 
     public void setPrijmeni(String prijmeni) {
-        if(prijmeni == null || !prijmeni.matches("[A-Z][a-z]+")){
-            throw new IllegalArgumentException("Neplatné příjmení.");
-        }else{
+        if (prijmeni.matches("[A-Z][a-z]{1,20}")) {
             this.prijmeni = prijmeni;
+        } else {
+            throw new IllegalArgumentException("Neplatné příjmení");
         }
     }
 
@@ -59,11 +59,7 @@ public class Uzivatel {
     }
 
     public void setHeslo(String heslo) {
-        if (heslo == null || !heslo.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{8,}$")) {
-            throw new IllegalArgumentException("Heslo musí obsahovat alespoň jedno velké písmeno, malé písmeno, číslici a mít minimálně 8 znaků.");
-        } else {
-            this.heslo = heslo;
-        }
+        this.heslo = heslo;
     }
 
     public String getTelefon() {
@@ -71,10 +67,10 @@ public class Uzivatel {
     }
 
     public void setTelefon(String telefon) {
-        if(telefon == null || !telefon.matches("[0-9]{9}")){
-            throw new IllegalArgumentException("Neplatné telefonní číslo.");
-        }else{
+        if (telefon.matches("[0-9]{9}")) {
             this.telefon = telefon;
+        } else {
+            throw new IllegalArgumentException("Neplatné telefonní číslo.");
         }
     }
 
@@ -83,10 +79,10 @@ public class Uzivatel {
     }
 
     public void setIdUzivatele(String idUzivatele) {
-        if(telefon == null || !telefon.matches("[0-9]{5}")){
-            throw new IllegalArgumentException("Neplatné telefonní číslo.");
-        }else{
+        if (idUzivatele.matches("[0-9]{5}")) {
             this.idUzivatele = idUzivatele;
+        } else {
+            throw new IllegalArgumentException("Neplatné ID uživatele.");
         }
     }
 
@@ -95,10 +91,10 @@ public class Uzivatel {
     }
 
     public void setAdresa(String adresa) {
-        if(adresa == null || adresa.isEmpty()){
-            throw new IllegalArgumentException("Neplatná adresa.");
-        }else{
+        if (adresa != null && !adresa.isEmpty()) {
             this.adresa = adresa;
+        } else {
+            throw new IllegalArgumentException("Neplatná adresa.");
         }
     }
 

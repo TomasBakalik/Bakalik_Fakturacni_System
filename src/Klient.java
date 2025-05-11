@@ -1,5 +1,4 @@
 public class Klient {
-
     private String jmeno;
     private String prijmeni;
     private String adresa;
@@ -16,27 +15,24 @@ public class Klient {
         setEmail(email);
     }
 
-    public Klient() {
-    }
-
     public String getJmeno() {
         return jmeno;
     }
 
     public void setJmeno(String jmeno) {
-        if(jmeno == null || !jmeno.matches("[A-Z][a-z]+")){
+        if (jmeno == null || !jmeno.matches("[A-Z][a-z]{1,20}")) {
             throw new IllegalArgumentException("Neplatné jméno.");
         }else{
             this.jmeno = jmeno;
         }
     }
 
-    public String getPrijemni() {
+    public String getPrijmeni() {
         return prijmeni;
     }
 
     public void setPrijmeni(String prijmeni) {
-        if(prijmeni == null || !prijmeni.matches("[A-Z][a-z]+")){
+        if (prijmeni == null || !prijmeni.matches("[A-Z][a-z]{1,20}")) {
             throw new IllegalArgumentException("Neplatné příjmení.");
         }else{
             this.prijmeni = prijmeni;
@@ -48,7 +44,7 @@ public class Klient {
     }
 
     public void setAdresa(String adresa) {
-        if(adresa == null || adresa.isEmpty()){
+        if (adresa == null || adresa.isEmpty()) {
             throw new IllegalArgumentException("Neplatná adresa.");
         }else{
             this.adresa = adresa;
@@ -60,9 +56,9 @@ public class Klient {
     }
 
     public void setIco(String ico) {
-        if(ico == null || !ico.matches("[0-9]{8}")){
-            throw new IllegalArgumentException("Neplatné IČO.");
-        }else{
+        if (ico == null || !ico.matches("\\d{8}")) {
+            throw new IllegalArgumentException("Neplatne IČO.");
+        }else {
             this.ico = ico;
         }
     }
@@ -72,7 +68,7 @@ public class Klient {
     }
 
     public void setTelefonniCislo(String telefonniCislo) {
-        if(telefonniCislo == null || !telefonniCislo.matches("[0-9]{9}")){
+        if (telefonniCislo == null || !telefonniCislo.matches("\\d{9}")) {
             throw new IllegalArgumentException("Neplatné telefonní číslo.");
         }else{
             this.telefonniCislo = telefonniCislo;
