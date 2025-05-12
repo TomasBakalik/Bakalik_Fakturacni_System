@@ -110,4 +110,8 @@ public class Uzivatel {
                 ", adresa='" + adresa + '\'' +
                 '}';
     }
+
+    public boolean jeSpravneHeslo(String heslo) {
+        return this.heslo.equals(heslo);
+    }
 }
