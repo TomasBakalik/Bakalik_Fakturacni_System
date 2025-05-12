@@ -7,6 +7,7 @@ public class HlavniOkno extends JFrame {
     private JButton tlacitkoVystavit;
     private JButton tlacitkoRegistrovat;
     private JButton tlacitkoPrihlasit;
+    private SpravceFaktur spravceFaktur;
 
     public HlavniOkno(){
         nastavOkno();
@@ -55,6 +56,7 @@ public class HlavniOkno extends JFrame {
 
         tlacitkoVystavit.addActionListener(e -> otevrtiFormular());
         tlacitkoRegistrovat.addActionListener(e -> new RegistraceOkno().setVisible(true));
+        tlacitkoPrihlasit.addActionListener(e -> new PrihlaseniOkno(spravceFaktur).setVisible(true));
 
     }
 
