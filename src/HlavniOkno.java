@@ -10,6 +10,7 @@ public class HlavniOkno extends JFrame {
     private SpravceFaktur spravceFaktur;
 
     public HlavniOkno(){
+        this.spravceFaktur = new SpravceFaktur();
         nastavOkno();
         setVisible(true);
     }
@@ -71,7 +72,7 @@ public class HlavniOkno extends JFrame {
     }
 
     public void otevrtiFormular(){
-        FormularFaktura formular = new FormularFaktura();
+        FormularFaktura formular = new FormularFaktura(spravceFaktur);
         formular.setVisible(true);
     }
 }

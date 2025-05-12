@@ -24,7 +24,8 @@ public class FormularFaktura extends JFrame{
     private JButton tlacitkoStahnout;
     private SpravceFaktur spravceFaktur;
 
-    public FormularFaktura(){
+    public FormularFaktura(SpravceFaktur spravceFaktur) {
+        this.spravceFaktur = spravceFaktur;
         nastavOkno();
     }
 

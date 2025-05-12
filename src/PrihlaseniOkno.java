@@ -12,6 +12,7 @@ public class PrihlaseniOkno extends JFrame {
         this.spravceFaktur = spravceFaktur;
         nastavOkno();
     }
+
     public void nastavOkno() {
         setTitle("Přihlášení uživatele");
         setSize(400, 250);
@@ -30,8 +31,41 @@ public class PrihlaseniOkno extends JFrame {
         poleHeslo = new JPasswordField();
         panelFormular.add(poleHeslo);
 
+        tlacitkoPrihlasit = new JButton("Přihlásit se");
+        tlacitkoPrihlasit.setBackground(new Color(0, 153, 0));
+        tlacitkoPrihlasit.setForeground(Color.WHITE);
+        tlacitkoPrihlasit.setFont(new Font("Arial", Font.BOLD, 14));
+        tlacitkoPrihlasit.setFocusPainted(false);
+        tlacitkoPrihlasit.setPreferredSize(new Dimension(400, 45));
+
+        tlacitkoPrihlasit.addActionListener(e -> prihlas());
+
+        JPanel panelTlacitko = new JPanel(new BorderLayout());
+        panelTlacitko.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 0));
+        panelTlacitko.add(tlacitkoPrihlasit, BorderLayout.CENTER);
+
         setLayout(new BorderLayout());
         add(panelFormular, BorderLayout.CENTER);
+        add(panelTlacitko, BorderLayout.SOUTH);
+    }
+
+    public void prihlas() {
+        String email = poleEmail.getText();
+        String heslo = new String(poleHeslo.getPassword());
+
+        SpravceUzivatelu spravce = new SpravceUzivatelu();
+        Uzivatel uzivatel = spravce.prihlas(email, heslo);
+
+        if (uzivatel != null) {
+            spravceFaktur.nacistFakturyZeSouboru(uzivatel.getEmail());
+
+            JOptionPane.showMessageDialog(this, "Vítej zpět, " + uzivatel.getJmeno() + "!");
+            dispose();
+            UzivatelMenuOkno menu = new UzivatelMenuOkno(uzivatel, spravceFaktur);
+            menu.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Neplatný email nebo heslo.");
+        }
     }
 
 }
