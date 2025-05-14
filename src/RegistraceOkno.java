@@ -18,7 +18,7 @@ public class RegistraceOkno extends JFrame {
         nastavOkno();
     }
 
-    public void nastavOkno(){
+    private void nastavOkno(){
         setTitle("Registrace uživatele");
         setSize(500, 500);
         setLocationRelativeTo(null);
@@ -74,7 +74,7 @@ public class RegistraceOkno extends JFrame {
         add(tlacitkoRegistrovat, BorderLayout.SOUTH);
     }
 
-    public void registrujUzivatele() {
+    private void registrujUzivatele() {
         try {
             String jmeno = poleJmeno.getText();
             String prijmeni = polePrijmeni.getText();

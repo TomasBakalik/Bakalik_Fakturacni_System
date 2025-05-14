@@ -13,7 +13,7 @@ public class PrihlaseniOkno extends JFrame {
         nastavOkno();
     }
 
-    public void nastavOkno() {
+    private void nastavOkno() {
         setTitle("Přihlášení uživatele");
         setSize(400, 250);
         setLocationRelativeTo(null);
@@ -49,7 +49,7 @@ public class PrihlaseniOkno extends JFrame {
         add(panelTlacitko, BorderLayout.SOUTH);
     }
 
-    public void prihlas() {
+    private void prihlas() {
         String email = poleEmail.getText();
         String heslo = new String(poleHeslo.getPassword());
 
