@@ -15,7 +15,7 @@ public class HlavniOkno extends JFrame {
         setVisible(true);
     }
 
-    public void nastavOkno(){
+    private void nastavOkno(){
         setTitle("Fakturační Systém");
         setSize(1200,800);
         setLocationRelativeTo(null);

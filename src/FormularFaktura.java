@@ -129,7 +129,7 @@ public class FormularFaktura extends JFrame{
         }
     }
 
-    public void stahnoutFakturu(ActionEvent e) {
+    private void stahnoutFakturu(ActionEvent e) {
         try {
             Klient klient = new Klient(
                     poleJmeno.getText(),
