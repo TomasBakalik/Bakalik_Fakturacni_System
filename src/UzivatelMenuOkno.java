@@ -11,6 +11,46 @@ public class UzivatelMenuOkno extends JFrame {
     public UzivatelMenuOkno(Uzivatel uzivatel, SpravceFaktur spravceFaktur) {
         this.prihlasenyUzivatel = uzivatel;
         this.spravceFaktur = spravceFaktur;
+        nastavOkno();
     }
 
+    private void nastavOkno() {
+        setTitle("Uživatelské menu");
+        setSize(500, 300);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setLayout(new BorderLayout());
+
+        JLabel nadpis = new JLabel("Vítej, " + prihlasenyUzivatel.getJmeno() + "!", SwingConstants.CENTER);
+        nadpis.setFont(new Font("Arial", Font.BOLD, 24));
+        add(nadpis, BorderLayout.NORTH);
+
+        tlacitkoVystavit = new JButton("Vystavit novou fakturu");
+        tlacitkoZobrazit = new JButton("Zobrazit moje faktury");
+
+        tlacitkoVystavit.setFont(new Font("Arial", Font.BOLD, 18));
+        tlacitkoVystavit.setBackground(new Color(59, 89, 152));
+        tlacitkoVystavit.setForeground(Color.WHITE);
+
+        tlacitkoZobrazit.setFont(new Font("Arial", Font.BOLD, 18));
+        tlacitkoZobrazit.setBackground(new Color(231, 76, 60));
+        tlacitkoZobrazit.setForeground(Color.WHITE);
+
+        JPanel panelTlacitek = new JPanel(new GridLayout(2, 1, 10, 10));
+        panelTlacitek.setBorder(BorderFactory.createEmptyBorder(30, 50, 30, 50));
+        panelTlacitek.add(tlacitkoVystavit);
+        panelTlacitek.add(tlacitkoZobrazit);
+
+        add(panelTlacitek, BorderLayout.CENTER);
+
+        tlacitkoVystavit.addActionListener(e -> {
+            FormularFaktura formular = new FormularFaktura(prihlasenyUzivatel, spravceFaktur);
+            formular.setVisible(true);
+        });
+
+        tlacitkoZobrazit.addActionListener(e -> {
+            ZobrazitFakturyOkno okno = new ZobrazitFakturyOkno(prihlasenyUzivatel, spravceFaktur);
+            okno.setVisible(true);
+        });
+    }
 }

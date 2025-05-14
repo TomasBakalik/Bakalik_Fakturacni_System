@@ -1,1 +1,2 @@
 Tomas|Bakalik|bakalik@spsejecna.cz|Bakalik123|123123123|12345|Adresa 12
+Lukas|Hruby|hruby@lukas.cz|Hruby123|111222333|98765|Newtonova 88

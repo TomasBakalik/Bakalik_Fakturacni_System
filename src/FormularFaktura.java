@@ -22,14 +22,22 @@ public class FormularFaktura extends JFrame{
     private JTextField poleVystavitelTelefon;
     private JTextField poleVystavitelEmail;
     private JButton tlacitkoStahnout;
+    private Uzivatel prihlasenyUzivatel;
     private SpravceFaktur spravceFaktur;
+
+
+    public FormularFaktura(Uzivatel uzivatel, SpravceFaktur spravceFaktur) {
+        this.prihlasenyUzivatel = uzivatel;
+        this.spravceFaktur = spravceFaktur;
+        nastavOkno();
+    }
 
     public FormularFaktura(SpravceFaktur spravceFaktur) {
         this.spravceFaktur = spravceFaktur;
         nastavOkno();
     }
 
-    public void nastavOkno(){
+    private void nastavOkno() {
         setTitle("Vystavit fakturu");
         setSize(600, 700);
         setLocationRelativeTo(null);
@@ -105,13 +113,20 @@ public class FormularFaktura extends JFrame{
         tlacitkoStahnout.setForeground(Color.WHITE);
         tlacitkoStahnout.setFont(new Font("Arial", Font.BOLD, 16));
         tlacitkoStahnout.setFocusPainted(false);
-        tlacitkoStahnout.setPreferredSize(new Dimension(getWidth(), 50));
         tlacitkoStahnout.addActionListener(this::stahnoutFakturu);
 
         setLayout(new BorderLayout());
         add(panel, BorderLayout.CENTER);
         add(tlacitkoStahnout, BorderLayout.SOUTH);
 
+        if (prihlasenyUzivatel != null) {
+            poleVystavitelJmeno.setText(prihlasenyUzivatel.getJmeno());
+            poleVystavitelPrijmeni.setText(prihlasenyUzivatel.getPrijmeni());
+            poleVystavitelIco.setText(prihlasenyUzivatel.getIdUzivatele());
+            poleVystavitelAdresa.setText(prihlasenyUzivatel.getAdresa());
+            poleVystavitelTelefon.setText(prihlasenyUzivatel.getTelefon());
+            poleVystavitelEmail.setText(prihlasenyUzivatel.getEmail());
+        }
     }
 
     public void stahnoutFakturu(ActionEvent e) {
@@ -149,7 +164,10 @@ public class FormularFaktura extends JFrame{
             generator.ulozFakturu(faktura, vystJmeno, vystPrijmeni, vystIco, vystAdresa, vystTel, vystEmail);
 
             spravceFaktur.pridatFakturu(faktura);
-            UlozFaktury.ulozitFakturuProUzivatele(faktura, vystEmail);
+
+            if (prihlasenyUzivatel != null) {
+                UlozFaktury.ulozitFakturuProUzivatele(faktura, prihlasenyUzivatel.getEmail());
+            }
 
             JOptionPane.showMessageDialog(this, "Faktura byla úspěšně vystavena.");
             dispose();
