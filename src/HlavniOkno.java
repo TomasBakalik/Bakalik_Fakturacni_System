@@ -21,20 +21,10 @@ public class HlavniOkno extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
 
-        ImageIcon pozadiObrazek = new ImageIcon(getClass().getResource("/pozadi.jpg"));
+        ImageIcon pozadiObrazek = new ImageIcon("pozadi.jpg");
 
         JLabel pozadi = new JLabel(pozadiObrazek);
-
-        JPanel panel = new JPanel(){
-            protected void paintComponent(Graphics g){
-                super.paintComponent(g);
-                if(pozadiObrazek != null){
-                    g.drawImage(pozadiObrazek.getImage(), 0, 0, getWidth(), getHeight(), this);
-                }
-            }
-        };
-        panel.setLayout(new BorderLayout());
-        setContentPane(panel);
+        pozadi.setLayout(new BorderLayout());
 
         tlacitkoVystavit = vytvorTlacitko("Vystavit fakturu", new Color(59, 89, 152));
         tlacitkoRegistrovat = vytvorTlacitko("Registrovat", new Color(72, 133, 237));
@@ -52,7 +42,8 @@ public class HlavniOkno extends JFrame {
         panelStred.setBorder(BorderFactory.createEmptyBorder(20,100,20,100));
         panelStred.add(panelTlacitek);
 
-        panel.add(panelStred, BorderLayout.CENTER);
+        pozadi.add(panelStred, BorderLayout.CENTER);
+        setContentPane(pozadi);
 
         tlacitkoVystavit.addActionListener(e -> otevrtiFormular());
         tlacitkoRegistrovat.addActionListener(e -> new RegistraceOkno().setVisible(true));
