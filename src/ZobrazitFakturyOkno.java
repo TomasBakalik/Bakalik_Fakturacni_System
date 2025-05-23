@@ -16,7 +16,7 @@ public class ZobrazitFakturyOkno extends JFrame {
         nacistFakturyUzivatele();
     }
 
-    private void nastavOkno() {
+    public void nastavOkno() {
         setTitle("Moje faktury");
         setSize(800, 400);
         setLocationRelativeTo(null);
@@ -29,7 +29,7 @@ public class ZobrazitFakturyOkno extends JFrame {
         add(scrollPane, BorderLayout.CENTER);
     }
 
-    private void nacistFakturyUzivatele() {
+    public void nacistFakturyUzivatele() {
         ArrayList<Faktura> faktury = spravceFaktur.ziskejVsechnyFaktury();
         DefaultTableModel model = (DefaultTableModel) tabulka.getModel();
         model.setRowCount(0);

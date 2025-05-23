@@ -14,7 +14,7 @@ public class UzivatelMenuOkno extends JFrame {
         nastavOkno();
     }
 
-    private void nastavOkno() {
+    public void nastavOkno() {
         setTitle("Uživatelské menu");
         setSize(500, 300);
         setLocationRelativeTo(null);

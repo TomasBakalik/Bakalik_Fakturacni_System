@@ -13,7 +13,7 @@ public class PrihlaseniOkno extends JFrame {
         nastavOkno();
     }
 
-    private void nastavOkno() {
+    public void nastavOkno() {
         setTitle("Přihlášení uživatele");
         setSize(400, 250);
         setLocationRelativeTo(null);
@@ -41,7 +41,6 @@ public class PrihlaseniOkno extends JFrame {
         tlacitkoPrihlasit.addActionListener(e -> prihlas());
 
         JPanel panelTlacitko = new JPanel(new BorderLayout());
-        panelTlacitko.setBorder(BorderFactory.createEmptyBorder(10, 0, 0, 0));
         panelTlacitko.add(tlacitkoPrihlasit, BorderLayout.CENTER);
 
         setLayout(new BorderLayout());
@@ -49,7 +48,7 @@ public class PrihlaseniOkno extends JFrame {
         add(panelTlacitko, BorderLayout.SOUTH);
     }
 
-    private void prihlas() {
+    public void prihlas() {
         String email = poleEmail.getText();
         String heslo = new String(poleHeslo.getPassword());
 

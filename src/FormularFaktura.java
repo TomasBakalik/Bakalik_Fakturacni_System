@@ -37,7 +37,7 @@ public class FormularFaktura extends JFrame{
         nastavOkno();
     }
 
-    private void nastavOkno() {
+    public void nastavOkno() {
         setTitle("Vystavit fakturu");
         setSize(600, 700);
         setLocationRelativeTo(null);
@@ -108,7 +108,7 @@ public class FormularFaktura extends JFrame{
         panel.add(poleCenaZaKus);
 
         tlacitkoStahnout = new JButton("Stáhnout fakturu");
-        tlacitkoStahnout.setPreferredSize(new Dimension(100, 50));
+        tlacitkoStahnout.setPreferredSize(new Dimension(600, 50));
         tlacitkoStahnout.setBackground(new Color(51, 102, 153));
         tlacitkoStahnout.setForeground(Color.WHITE);
         tlacitkoStahnout.setFont(new Font("Arial", Font.BOLD, 16));
@@ -129,7 +129,7 @@ public class FormularFaktura extends JFrame{
         }
     }
 
-    private void stahnoutFakturu(ActionEvent e) {
+    public void stahnoutFakturu(ActionEvent e) {
         try {
             Klient klient = new Klient(
                     poleJmeno.getText(),

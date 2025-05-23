@@ -24,7 +24,7 @@ public class SpravceUzivatelu {
         }
     }
 
-    private ArrayList<Uzivatel> nacistVsechnyUzivatele() {
+    public ArrayList<Uzivatel> nacistVsechnyUzivatele() {
         ArrayList<Uzivatel> uzivatele = new ArrayList<>();
         File soubor = new File(nazevSouboru);
 
