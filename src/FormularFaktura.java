@@ -113,7 +113,7 @@ public class FormularFaktura extends JFrame{
         tlacitkoStahnout.setForeground(Color.WHITE);
         tlacitkoStahnout.setFont(new Font("Arial", Font.BOLD, 16));
         tlacitkoStahnout.setFocusPainted(false);
-        tlacitkoStahnout.addActionListener(this::stahnoutFakturu);
+        tlacitkoStahnout.addActionListener(e -> stahnoutFakturu());
 
         setLayout(new BorderLayout());
         add(panel, BorderLayout.CENTER);
@@ -129,7 +129,7 @@ public class FormularFaktura extends JFrame{
         }
     }
 
-    public void stahnoutFakturu(ActionEvent e) {
+    public void stahnoutFakturu() {
         try {
             Klient klient = new Klient(
                     poleJmeno.getText(),
