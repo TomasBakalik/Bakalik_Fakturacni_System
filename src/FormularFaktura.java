@@ -172,8 +172,8 @@ public class FormularFaktura extends JFrame{
             JOptionPane.showMessageDialog(this, "Faktura byla úspěšně vystavena.");
             dispose();
 
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Chyba při vyplňování údajů: " + ex.getMessage());
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Chyba při vyplňování údajů: " + e.getMessage());
         }
     }
 
