@@ -23,7 +23,7 @@ public class KlientTest {
             new Klient("Lucie", "Novotna", "Ulice 34", "87654321", "777888999", "lucie.novotna@seznam.cz");
         });
 
-        System.out.println("Zadany e-mail: lucie.novotna.cz");
+        System.out.println("Zadany e-mail: lucie.novotna@seznam.cz");
         System.out.println("Platný e-mail byl úspěšně přijat.");
     }
 }
