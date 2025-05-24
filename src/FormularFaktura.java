@@ -30,11 +30,13 @@ public class FormularFaktura extends JFrame{
         this.prihlasenyUzivatel = uzivatel;
         this.spravceFaktur = spravceFaktur;
         nastavOkno();
+        setVisible(true);
     }
 
     public FormularFaktura(SpravceFaktur spravceFaktur) {
         this.spravceFaktur = spravceFaktur;
         nastavOkno();
+        setVisible(true);
     }
 
     public void nastavOkno() {

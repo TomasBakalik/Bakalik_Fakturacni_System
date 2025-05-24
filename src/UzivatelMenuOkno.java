@@ -12,6 +12,7 @@ public class UzivatelMenuOkno extends JFrame {
         this.prihlasenyUzivatel = uzivatel;
         this.spravceFaktur = spravceFaktur;
         nastavOkno();
+        setVisible(true);
     }
 
     public void nastavOkno() {
@@ -38,19 +39,10 @@ public class UzivatelMenuOkno extends JFrame {
 
         JPanel panelTlacitek = new JPanel(new GridLayout(2, 1, 10, 10));
         panelTlacitek.setBorder(BorderFactory.createEmptyBorder(30, 50, 30, 50));
-        panelTlacitek.add(tlacitkoVystavit);
-        panelTlacitek.add(tlacitkoZobrazit);
 
         add(panelTlacitek, BorderLayout.CENTER);
 
-        tlacitkoVystavit.addActionListener(e -> {
-            FormularFaktura formular = new FormularFaktura(prihlasenyUzivatel, spravceFaktur);
-            formular.setVisible(true);
-        });
-
-        tlacitkoZobrazit.addActionListener(e -> {
-            ZobrazitFakturyOkno okno = new ZobrazitFakturyOkno(prihlasenyUzivatel, spravceFaktur);
-            okno.setVisible(true);
-        });
+        tlacitkoVystavit.addActionListener(e -> new FormularFaktura(prihlasenyUzivatel, spravceFaktur));
+        tlacitkoZobrazit.addActionListener(e -> new ZobrazitFakturyOkno(prihlasenyUzivatel, spravceFaktur));
     }
 }

@@ -14,6 +14,7 @@ public class ZobrazitFakturyOkno extends JFrame {
         this.spravceFaktur = spravceFaktur;
         nastavOkno();
         nacistFakturyUzivatele();
+        setVisible(true);
     }
 
     public void nastavOkno() {

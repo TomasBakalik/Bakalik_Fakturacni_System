@@ -45,9 +45,9 @@ public class HlavniOkno extends JFrame {
         pozadi.add(panelStred, BorderLayout.CENTER);
         setContentPane(pozadi);
 
-        tlacitkoVystavit.addActionListener(e -> otevrtiFormular());
-        tlacitkoRegistrovat.addActionListener(e -> new RegistraceOkno().setVisible(true));
-        tlacitkoPrihlasit.addActionListener(e -> new PrihlaseniOkno(spravceFaktur).setVisible(true));
+        tlacitkoVystavit.addActionListener(e -> new FormularFaktura(spravceFaktur));
+        tlacitkoRegistrovat.addActionListener(e -> new RegistraceOkno());
+        tlacitkoPrihlasit.addActionListener(e -> new PrihlaseniOkno(spravceFaktur));
 
     }
 
@@ -59,10 +59,5 @@ public class HlavniOkno extends JFrame {
         tlacitko.setBackground(barvaPozadi);
         tlacitko.setFocusPainted(false);
         return tlacitko;
-    }
-
-    public void otevrtiFormular(){
-        FormularFaktura formular = new FormularFaktura(spravceFaktur);
-        formular.setVisible(true);
     }
 }

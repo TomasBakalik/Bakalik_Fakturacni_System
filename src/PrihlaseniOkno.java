@@ -11,6 +11,7 @@ public class PrihlaseniOkno extends JFrame {
     public PrihlaseniOkno(SpravceFaktur spravceFaktur) {
         this.spravceFaktur = spravceFaktur;
         nastavOkno();
+        setVisible(true);
     }
 
     public void nastavOkno() {
@@ -37,7 +38,6 @@ public class PrihlaseniOkno extends JFrame {
         tlacitkoPrihlasit.setFont(new Font("Arial", Font.BOLD, 14));
         tlacitkoPrihlasit.setFocusPainted(false);
         tlacitkoPrihlasit.setPreferredSize(new Dimension(400, 45));
-
         tlacitkoPrihlasit.addActionListener(e -> prihlas());
 
         JPanel panelTlacitko = new JPanel(new BorderLayout());
@@ -61,7 +61,6 @@ public class PrihlaseniOkno extends JFrame {
             JOptionPane.showMessageDialog(this, "Vítej zpět, " + uzivatel.getJmeno() + "!");
             dispose();
             UzivatelMenuOkno menu = new UzivatelMenuOkno(uzivatel, spravceFaktur);
-            menu.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Neplatný email nebo heslo.");
         }

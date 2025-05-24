@@ -16,6 +16,7 @@ public class RegistraceOkno extends JFrame {
 
     public RegistraceOkno() {
         nastavOkno();
+        setVisible(true);
     }
 
     public void nastavOkno(){
@@ -62,12 +63,7 @@ public class RegistraceOkno extends JFrame {
         tlacitkoRegistrovat.setFont(new Font("Arial", Font.BOLD, 16));
         tlacitkoRegistrovat.setFocusPainted(false);
         tlacitkoRegistrovat.setPreferredSize(new Dimension(500, 40));
-        tlacitkoRegistrovat.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                registrujUzivatele();
-            }
-        });
+        tlacitkoRegistrovat.addActionListener(e -> registrujUzivatele());
 
         setLayout(new BorderLayout());
         add(panel, BorderLayout.CENTER);
@@ -92,8 +88,8 @@ public class RegistraceOkno extends JFrame {
             JOptionPane.showMessageDialog(this, "Uživatel byl úspěšně registrován:\n" + uzivatel.toString());
             dispose();
 
-        } catch (IllegalArgumentException ex) {
-            JOptionPane.showMessageDialog(this, "Chyba: " + ex.getMessage());
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, "Chyba: " + e.getMessage());
         }
     }
 }
