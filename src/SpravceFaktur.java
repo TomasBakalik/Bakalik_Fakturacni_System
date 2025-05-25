@@ -12,10 +12,10 @@ public class SpravceFaktur {
         faktury = new ArrayList<>();
     }
 
-    public void pridatFakturu(Faktura faktura){
-        if(faktura == null){
+    public void pridatFakturu(Faktura faktura) {
+        if (faktura == null) {
             throw new IllegalArgumentException("Faktura nesmí být null");
-        }else{
+        } else {
             faktury.add(faktura);
         }
     }
@@ -24,7 +24,7 @@ public class SpravceFaktur {
         return new ArrayList<>(faktury);
     }
 
-    public int pocetFaktur(){
+    public int pocetFaktur() {
         return faktury.size();
     }
 
