@@ -1,8 +1,16 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
+/**
+ * Tato třída testuje validaci e-mailu při vytváření klienta.
+ * Ověřuje, jestli program správně rozpozná platné a neplatné e-maily.
+ */
 public class KlientTest {
 
+    /**
+     * Ověřuje, že při zadání neplatného e-mailu dojde k vyhození výjimky.
+     * Zde zadaný e-mail nemá správný formát, takže by měl být odmítnut.
+     */
     @Test
     public void testNeplatnyEmailVyhodiVyjimku() {
         System.out.println("Test pro neplatný e-mail");
@@ -15,6 +23,10 @@ public class KlientTest {
         System.out.println("Výjimka: " + exception.getMessage());
     }
 
+    /**
+     * Ověřuje, že při zadání platného e-mailu se výjimka nevyhodí.
+     * Program by měl klienta s tímto e-mailem bez problémů vytvořit.
+     */
     @Test
     public void testPlatnyEmailNevyhodiVyjimku() {
         System.out.println("Test pro platný e-mail");
