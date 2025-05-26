@@ -1,6 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Tato třída zobrazuje okno pro registraci nového uživatele (otevírá se po kliknutí na tlačítko registrovat)
+ * Uživatel zde vyplní své osobní údaje, které se poté uloží do souboru a bude je využívat u přihlášení.
+ */
 public class RegistraceOkno extends JFrame {
 
     private JTextField poleJmeno;
@@ -17,6 +21,10 @@ public class RegistraceOkno extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Nastaví vzhled registračního okna, přidá vstupní pole a tlačítko pro registraci.
+     * Po kliknutí na tlačítko se zavolá metoda, která vytvoří a uloží uživatele.
+     */
     public void nastavOkno(){
         setTitle("Registrace uživatele");
         setSize(500, 500);
@@ -68,6 +76,11 @@ public class RegistraceOkno extends JFrame {
         add(tlacitkoRegistrovat, BorderLayout.SOUTH);
     }
 
+    /**
+     * Získá údaje z formuláře a vytvoří nového uživatele.
+     * Uživatel se uloží do souboru, pokud jsou údaje správně vyplněné.
+     * Pokud nastane chyba, zobrazí se chybová hláška.
+     */
     public void registrujUzivatele() {
         try {
             String jmeno = poleJmeno.getText();
