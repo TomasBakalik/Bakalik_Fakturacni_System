@@ -1,3 +1,9 @@
+/**
+ * Tato třída slouží k uchování údajů o klientovi, kterému je vystavena faktura.
+ * Obsahuje jméno, příjmení, adresu, IČO, telefonní číslo a e-mail.
+ * Zároveň provádí základní kontrolu zadaných údajů pomocí regexů.
+ */
+
 public class Klient {
     private String jmeno;
     private String prijmeni;
@@ -22,7 +28,7 @@ public class Klient {
     public void setJmeno(String jmeno) {
         if (jmeno == null || !jmeno.matches("[A-Z][a-z]{1,20}")) {
             throw new IllegalArgumentException("Neplatné jméno.");
-        }else{
+        } else {
             this.jmeno = jmeno;
         }
     }
@@ -34,7 +40,7 @@ public class Klient {
     public void setPrijmeni(String prijmeni) {
         if (prijmeni == null || !prijmeni.matches("[A-Z][a-z]{1,20}")) {
             throw new IllegalArgumentException("Neplatné příjmení.");
-        }else{
+        } else {
             this.prijmeni = prijmeni;
         }
     }
@@ -46,7 +52,7 @@ public class Klient {
     public void setAdresa(String adresa) {
         if (adresa == null || adresa.isEmpty()) {
             throw new IllegalArgumentException("Neplatná adresa.");
-        }else{
+        } else {
             this.adresa = adresa;
         }
     }
@@ -58,7 +64,7 @@ public class Klient {
     public void setIco(String ico) {
         if (ico == null || !ico.matches("\\d{8}")) {
             throw new IllegalArgumentException("Neplatne IČO.");
-        }else {
+        } else {
             this.ico = ico;
         }
     }
@@ -70,7 +76,7 @@ public class Klient {
     public void setTelefonniCislo(String telefonniCislo) {
         if (telefonniCislo == null || !telefonniCislo.matches("\\d{9}")) {
             throw new IllegalArgumentException("Neplatné telefonní číslo.");
-        }else{
+        } else {
             this.telefonniCislo = telefonniCislo;
         }
     }
@@ -82,7 +88,7 @@ public class Klient {
     public void setEmail(String email) {
         if (email == null || !email.matches("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,6}$")) {
             throw new IllegalArgumentException("Neplatný email.");
-        }else{
+        } else {
             this.email = email;
         }
     }
