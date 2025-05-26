@@ -4,8 +4,18 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Tato třída slouží k vytvoření a uložení faktury do textového souboru.
+ * Vytvoří jednoduchý textový soubor s údaji o faktuře, který si uživatel může uložit do počítače.
+ */
 public class GeneratorTxt {
 
+    /**
+     * Tato metoda uloží fakturu do počítače do souboru, který si uživatel sám vybere.
+     * Faktura se ukládá jako textový soubor podle jednoduché šablony.
+     * Pokud se faktura uloží úspěšně, zobrazí se zpráva o úspěchu.
+     * Když nastane chyba při ukládání, zobrazí se chybová hláška.
+     */
     public void ulozFakturu(Faktura faktura, String jmeno, String prijmeni, String ico, String adresa, String telefon, String email){
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setSelectedFile(new File("faktura_" + faktura.getCisloFaktury() + ".txt"));
