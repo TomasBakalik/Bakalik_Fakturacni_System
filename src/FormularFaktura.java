@@ -3,6 +3,9 @@ import java.awt.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Tato třída zobrazuje okno (formulář) pro vystavení nové faktury. Uživatel zde vyplní základní údaje a může si fakturu stáhnout.
+ */
 public class FormularFaktura extends JFrame{
 
     private JTextField poleJmeno;
@@ -38,6 +41,10 @@ public class FormularFaktura extends JFrame{
         setVisible(true);
     }
 
+    /**
+     * Tato metoda nastaví vlastnosti okna a vytvoří vstupní pole, kam uživatel napíše své údaje.
+     * Pokud je uživatel přihlášený jeho údaje se předvyplní do formuláře.
+     */
     public void nastavOkno() {
         setTitle("Vystavit fakturu");
         setSize(600, 700);
@@ -130,6 +137,11 @@ public class FormularFaktura extends JFrame{
         }
     }
 
+    /**
+     * V této metodě se vytvoří nová faktura podle údajů zadaných ve formuláři.
+     * Faktura si uživatel může uložit do počítače a zároveň se přidá do správce faktur.
+     * Pokud je uživatel přihlášený, faktura se uloží pod jeho e-mail do jeho souboru.
+     */
     public void stahnoutFakturu() {
         try {
             Klient klient = new Klient(
@@ -178,6 +190,9 @@ public class FormularFaktura extends JFrame{
         }
     }
 
+    /**
+     * Vygeneruje nové číslo faktury podle aktuálního datumu a času.
+     */
     public String generujCisloFaktury() {
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
         return "F" + format.format(new Date());
