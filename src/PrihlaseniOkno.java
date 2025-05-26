@@ -1,6 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Tato třída zobrazuje přihlašovací okno pro uživatele.
+ * Uživatel zde zadá svůj e-mail a heslo, aby se mohl přihlásit do mého systému a podívat se na své již vystavené faktury nebo vystavit novou fakturu.
+ */
 public class PrihlaseniOkno extends JFrame {
 
     private JTextField poleEmail;
@@ -14,6 +18,10 @@ public class PrihlaseniOkno extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Nastaví vzhled přihlašovacího okna, přidá formulářová pole a tlačítko pro přihlášení.
+     * Po kliknutí na tlačítko se zavolá metoda pro ověření údajů.
+     */
     public void nastavOkno() {
         setTitle("Přihlášení uživatele");
         setSize(400, 250);
@@ -48,6 +56,11 @@ public class PrihlaseniOkno extends JFrame {
         add(panelTlacitko, BorderLayout.SOUTH);
     }
 
+    /**
+     * Získá zadaný e-mail a heslo, ověří je podle uživatelů uložených v souboru registrovaných uživatelů.
+     * Pokud jsou údaje správné, načtou se jeho faktury a otevře se uživatelské menu.
+     * Pokud ne, zobrazí se chybová hláška.
+     */
     public void prihlas() {
         String email = poleEmail.getText();
         String heslo = new String(poleHeslo.getPassword());
