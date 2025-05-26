@@ -3,16 +3,25 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.Date;
 
+/**
+ * Tato třída testuje výpočet celkové ceny faktury. Ověřuje, jestli metoda spocitejCelkovaCena funguje spránvě.
+ */
 public class FakturaTest {
 
     private Faktura faktura;
 
+    /**
+     * Vytvoří novou fakturu a nastaví ji před každým testem. Používá testovacího klienta a stávající datum.
+     */
     @BeforeEach
     public void setUp() {
         Klient klient = new Klient("Jan", "Novak", "Praha 1", "12345678", "777666555", "jan.novak@seznam.cz");
         faktura = new Faktura("F001", klient, new Date(), new Date(), "vystavitel@seznam.cz");
     }
 
+    /**
+     * Tato metoda testuje výpočet celkové ceny faktury.
+     */
     @Test
     public void testSpocitejCelkovaCena() {
 
