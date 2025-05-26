@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Date;
 
+/**
+ * Tato třída reprezentuje jednu fakturu. Obsahuje údaje o klientovi, datumu, položkách, stavu a celkové částce.
+ */
 public class Faktura {
 
     private String cisloFaktury;
@@ -49,6 +52,9 @@ public class Faktura {
         return seznamPolozek;
     }
 
+    /**
+     * Tato metoda přidá položku do seznamu položek ve faktuře. Když bude položka null vyhodí se chyba.
+     */
     public void pridatPolozku(PolozkaFaktury polozka){
         if(polozka == null){
             throw new IllegalArgumentException("Položka nesmí být null");
@@ -113,6 +119,10 @@ public class Faktura {
         this.castkaCelkova = castkaCelkova;
     }
 
+    /**
+     * Spočítá celkovou cenu faktury podle toho, kolik faktura obsahuje položek.
+     * @return Sečte ceny všech položek a následně to vrátí (celková cena).
+     */
     public double spocitejCelkovaCena(){
         double celkem = 0;
         for(PolozkaFaktury polozka : seznamPolozek){
