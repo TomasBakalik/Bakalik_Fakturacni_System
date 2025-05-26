@@ -1,3 +1,7 @@
+/**
+ * Tato třída reprezentuje jednu položku ve faktuře.
+ * Obsahuje název položky, počet kusů, cenu za jeden kus a celkovou cenu.
+ */
 public class PolozkaFaktury {
 
     private String nazev;
@@ -17,9 +21,9 @@ public class PolozkaFaktury {
     }
 
     public void setNazev(String nazev) {
-        if(nazev == null || nazev.isEmpty()){
+        if (nazev == null || nazev.isEmpty()) {
             throw new IllegalArgumentException("Název nesmí být prázdný.");
-        }else{
+        } else {
             this.nazev = nazev;
         }
     }
@@ -29,9 +33,9 @@ public class PolozkaFaktury {
     }
 
     public void setPocetKusu(int pocetKusu) {
-        if(pocetKusu <= 0){
+        if (pocetKusu <= 0) {
             throw new IllegalArgumentException("Počet kusů musí být větší než 0.");
-        }else{
+        } else {
             this.pocetKusu = pocetKusu;
         }
     }
@@ -41,9 +45,9 @@ public class PolozkaFaktury {
     }
 
     public void setCenaZaKus(double cenaZaKus) {
-        if(cenaZaKus < 0){
+        if (cenaZaKus < 0) {
             throw new IllegalArgumentException("Cena za kus nesmí být záporná.");
-        }else{
+        } else {
             this.cenaZaKus = cenaZaKus;
         }
     }
@@ -52,6 +56,9 @@ public class PolozkaFaktury {
         return cenaCelkova;
     }
 
+    /**
+     * Slouží k vypočítání celkové ceny položky podle počtu kusů a ceny za kus.
+     */
     public void vypocitejCelkovaCena() {
         this.cenaCelkova = this.pocetKusu * this.cenaZaKus;
     }
