@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Tato třída zobrazuí menu poté, co se uživatel přihláší.
+ * Tato třída zobrazí menu poté, co se uživatel přihlásí.
  * Uživatel si zde může vybrat, jestli chce vystavit novou fakturu nebo zobrazit ty, které už vytvořil.
  */
 public class UzivatelMenuOkno extends JFrame {
