@@ -3,7 +3,10 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Date;
-
+/**
+ * Tato třída spravuje všechny faktury v programu.
+ * Uchovává je v seznamu, umožňuje je přidat, získat a načíst ze souboru.
+ */
 public class SpravceFaktur {
 
     private ArrayList<Faktura> faktury;
@@ -12,6 +15,10 @@ public class SpravceFaktur {
         faktury = new ArrayList<>();
     }
 
+    /**
+     * Přidává novou fakturu do seznamu.
+     * Pokud je faktura null, vyhodí chybu.
+     */
     public void pridatFakturu(Faktura faktura) {
         if (faktura == null) {
             throw new IllegalArgumentException("Faktura nesmí být null");
@@ -20,14 +27,27 @@ public class SpravceFaktur {
         }
     }
 
+    /**
+     * Vrací faktury.
+     * @return Vrací všechny faktury, které jsou momentálně uložené v seznamu.
+     */
     public ArrayList<Faktura> ziskejVsechnyFaktury() {
         return new ArrayList<>(faktury);
     }
 
+    /**
+     * Vrací počet faktur.
+     * @return Vrací počet faktur, které má správce momentálně uložené.
+     */
     public int pocetFaktur() {
         return faktury.size();
     }
 
+    /**
+     * Načte faktury ze souboru podle e-mailu uživatele.
+     * Pokud soubor neexistuje, metoda nic neudělá.
+     * Všechny načtené faktury se uloží do seznamu, aby se s nimi mohlo později pracovat.
+     */
     public void nacistFakturyZeSouboru(String emailUzivatele) {
         faktury.clear();
         String nazevSouboru = "faktury_" + emailUzivatele + ".txt";
