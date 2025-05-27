@@ -1,6 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Tato třída zobrazuí menu poté, co se uživatel přihláší.
+ * Uživatel si zde může vybrat, jestli chce vystavit novou fakturu nebo zobrazit ty, které už vytvořil.
+ */
 public class UzivatelMenuOkno extends JFrame {
 
     private Uzivatel prihlasenyUzivatel;
@@ -15,6 +19,10 @@ public class UzivatelMenuOkno extends JFrame {
         setVisible(true);
     }
 
+    /**
+     * Nastaví vzhled okna pro uživatele a přidá dvě tlačítka: jedno pro vystavení faktury a druhé pro zobrazení předchozích faktur.
+     * Každé tlačítko otevírá nové okno podle vybrané akce.
+     */
     public void nastavOkno() {
         setTitle("Uživatelské menu");
         setSize(500, 300);
