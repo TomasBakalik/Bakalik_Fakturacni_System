@@ -3,8 +3,16 @@ import org.junit.jupiter.api.Test;
 import java.util.Date;
 import java.util.ArrayList;
 
+/**
+ * Tato třída testuje, jestli funguje uložení a načtení faktury ze souboru tak, jak by mělo.
+ * Vytvoří se testovací faktura, uloží se do souboru a poté se zkusí znovu načíst.
+ */
 public class UlozeniANacteniFakturyTest {
 
+    /**
+     * Tento test ověřuje, že se faktura správně uloží do souboru a pak se načte zpět.
+     * Kontrolují se hlavně tyto údaje: počet načtených faktur, číslo faktury, částka i stav zaplacení.
+     */
     @Test
     public void testUlozeniANacteniFaktury() {
         System.out.println("Test pro uložení a načtení stejné faktury");
