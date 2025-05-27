@@ -1,3 +1,8 @@
+/**
+ * Tato třída slouží pro uchování informací o jednom uživateli.
+ * Obsahuje jeho jméno, příjmení, e-mail, heslo, telefon, ID a adresu.
+ * Při vytváření i úpravách údajů se kontroluje, jestli jsou správně zadané (regex).
+ */
 public class Uzivatel {
 
     private String jmeno;
@@ -111,6 +116,11 @@ public class Uzivatel {
                 '}';
     }
 
+    /**
+     * Porovná zadané heslo s uloženým heslem uživatele.
+     * @param heslo Heslo zadané při přihlášení.
+     * @return Vrací true, pokud se hesla shodují, vrací false pokud ne.
+     */
     public boolean jeSpravneHeslo(String heslo) {
         return this.heslo.equals(heslo);
     }
