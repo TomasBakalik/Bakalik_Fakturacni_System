@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Bakalik_Fakturacni_System.iml" filepath="$PROJECT_DIR$/Bakalik_Fakturacni_System.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FakturacniSystem_Bakalik.iml" filepath="$PROJECT_DIR$/FakturacniSystem_Bakalik.iml" />
     </modules>
   </component>
 </project>
