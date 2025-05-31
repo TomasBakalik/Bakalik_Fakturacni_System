@@ -29,7 +29,7 @@ public class HlavniOkno extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
 
-        ImageIcon pozadiObrazek = new ImageIcon("pozadi.jpg");
+        ImageIcon pozadiObrazek = new ImageIcon(getClass().getResource("/pozadi.jpg"));
 
         JLabel pozadi = new JLabel(pozadiObrazek);
         pozadi.setLayout(new BorderLayout());
