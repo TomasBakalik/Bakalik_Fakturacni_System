@@ -47,6 +47,8 @@ public class UzivatelMenuOkno extends JFrame {
 
         JPanel panelTlacitek = new JPanel(new GridLayout(2, 1, 10, 10));
         panelTlacitek.setBorder(BorderFactory.createEmptyBorder(30, 50, 30, 50));
+        panelTlacitek.add(tlacitkoVystavit);
+        panelTlacitek.add(tlacitkoZobrazit);
 
         add(panelTlacitek, BorderLayout.CENTER);
 
