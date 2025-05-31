@@ -29,7 +29,7 @@ public class GeneratorTxt {
                 FileWriter fw = new FileWriter(soubor);
                 BufferedWriter bw = new BufferedWriter(fw);
 
-                bw.write("FAKTURA – DANOVY DOKLAD");
+                bw.write("FAKTURA – DAŇOVÝ DOKLAD");
                 bw.newLine();
                 bw.newLine();
 
@@ -65,7 +65,7 @@ public class GeneratorTxt {
                     PolozkaFaktury p = faktura.getSeznamPolozek().get(0);
                     bw.write("Popis: " + p.getNazev());
                     bw.newLine();
-                    bw.write("Cena celkem: " + faktura.spocitejCelkovaCena() + " Kc");
+                    bw.write("Cena celkem: " + faktura.spocitejCelkovaCena() + " Kč");
                     bw.newLine();
                 } else {
                     bw.write("Popis: -");
